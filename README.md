@@ -1,92 +1,90 @@
-
-# Sokoban classique en C 
+# Classic Sokoban in C
 
 ![https://i.ibb.co/sHVpWJX/Sans-titre.png](https://i.ibb.co/sHVpWJX/Sans-titre.png)
 
-###  Auteurs 
+### Authors
 
-- SYMKO Tristan
-- BAUER Erwan 
+- Tristan Symko
+- Erwan Bauer
 
-### Prérequis
+### Prerequisites
 
-- Avoir le compilateur gcc
-- Avoir Make
-- Avoir Git
-- Avoir Doxygen (uniquement nécessaire pour la documentation)
+- GCC compiler
+- Make
+- Git
+- Doxygen (only needed for documentation)
 
 # Introduction
 
-Bienvenue dans notre projet de jeu Sokoban ! Ce jeu a été développé en utilisant le langage de programmation C et est conçu pour mettre en pratique les concepts abordés dans le cours de Techniques de développement. Le Sokoban est un jeu de puzzle classique où le joueur doit pousser des boîtes vers des emplacements de stockage désignés. Les règles du jeu et les fonctionnalités sont basées sur les spécifications ci-dessous.
+Welcome to our Sokoban game project! This game was developed using the C programming language and is designed to practice the concepts covered in the Development Techniques course. Sokoban is a classic puzzle game where the player must push boxes to designated storage locations. The game's rules and features are based on the specifications below.
 
-## Mécanismes de Jeu
+## Game Mechanics
 
-Le jeu est basé sur les règles classiques du Sokoban. Le Sokoban est un jeu de puzzle classique où le joueur contrôle un personnage qui doit pousser des boîtes vers des emplacements de stockage désignés. Le jeu se joue sur une carte basée sur une grille où le personnage peut se déplacer dans quatre directions (z: haut, b: bas, q: gauche, d: droite). Le personnage ne peut pousser qu’une seule boîte à la fois et il ne peut pas tirer les boîtes ou passer à travers les murs.
+The game is based on the classic rules of Sokoban. In Sokoban, the player controls a character who must push boxes to designated storage locations. The game is played on a grid-based map where the character can move in four directions (z: up, s: down, q: left, d: right). The character can only push one box at a time and cannot pull boxes or pass through walls.
 
-## Présentation
+## Features
 
-Voici un aperçu des fonctionnalités implémentées dans notre projet :
+Here is an overview of the features implemented in our project:
 
-- Affichage basé sur la console de la carte du jeu.
-- Capacité à charger et à jouer des niveaux de jeu à partir d'un fichier.
-- Gestion appropriée des mouvements du joueur et de la poussée des boîtes.
-- Détection et gestion de la condition de victoire (toutes les boîtes sont dans les emplacements de stockage).
+- Console-based display of the game map.
+- Ability to load and play game levels from a file.
+- Proper management of player movements and box pushing.
+- Detection and management of the win condition (all boxes are in storage locations).
 
-Les touches du jeu sont :
+The game controls are:
 
-- z: avancer vers le haut
-- s: aller vers le bas
-- q: aller vers la gauche
-- d: aller vers la droite
-- r: recommencer le niveau actuel
-- c: changer de niveau
-- o: out (quitter le jeu)
+- z: move up
+- s: move down
+- q: move left
+- d: move right
+- r: restart the current level
+- c: change level
+- o: quit the game
 
-Les caractères du jeu sont :
+The game characters are:
 
-- '#': un mur
-- '.': case de destination (pour caisses)
-- '$': une caisse
-- '*': caisse sur déstination
-- '@': le joueur
-- '+': joueur sur déstination
+- '#': a wall
+- '.': destination tile (for boxes)
+- '$': a box
+- '*': box on destination
+- '@': the player
+- '+': player on destination
 
-# Compilation et lancement
+# Compilation and Launch
 
-Une fois les règles et le jeu compris il ne vous reste plus qu'à suivre les étapes ci-dessous pour jouer !
+Once you understand the rules and the game, just follow the steps below to play!
 
 ## Compilation
 
-
-1. Clonez le dépôt Git
+1. Clone the Git repository
 ```bash
-git  clone  git@git.unistra.fr:symko/projet-techdev.git
+git clone git@git.unistra.fr:symko/projet-techdev.git
 ```
-2. Allez dans le répertoire du projet
+2. Go to the project directory
 ```bash
 cd  projet-techdev
 ```
-3. Compilez le projet en utilisant le Makefile
+3. Compile the project using the Makefile
 ```bash
 make
 ```
-## Lancement du jeu
+## Launching the Game
 
-Retourner dans l'invite de commande et suivez la procédure suivante
+Go back to the command prompt and follow this procedure
 
-4. **Lancer** le jeu avec la commande suivante
+4. **Launch** the game with the following command
 ```bash
 ./sokoban.exe
 ```  
-**BON JEU !**
+**ENJOY THE GAME!**
 
-# Paramétrage du jeu
+# Game Configuration
   
-## Ajout d'un niveau
+## Adding a Level
 
-Avant tout choses il est nécessaire que le **niveau** à ajouter soit dans le format de fichiers **.xsb**, c'est à dire un fichier avec le niveau en brut comme ci-dessous.
+First of all, the **level** to be added must be in **.xsb** file format, which means a raw level file like the one below.
 
-**Fichier Niveau 1.xsb** :
+**Level 1.xsb File:**
 
 ```
 1       #####
@@ -99,37 +97,37 @@ Avant tout choses il est nécessaire que le **niveau** à ajouter soit dans le f
 8      #######
 ```
 
-**ATTENTION**, le programme ne gère que 20 niveaux au maximum !
+**NOTE**, the program only handles up to 20 levels!
 
-- Se rendre dans le dossier "lvl" et simplement ajouter votre nouveau niveau dedans.
-- Il ne reste plus qu'à resuivre les **étapes 3 et 4** de la section [Compilation et lancement](#compilation-et-lancement)
+- Go to the "lvl" folder and simply add your new level there.
+- Then just follow **steps 3 and 4** in the [Compilation and Launch](#compilation-and-lancement) section again.
 
-## Les commandes optionnelles make
+## Optional make Commands
 
-- Pour générer la documentation en html
+- To generate the documentation in HTML
 
 ```
 make doc
 ```
 
-- Pour nettoyer le répertoire du projet
+- To clean the project directory
 
 ```
 make clean
 ```
 
-NB : supprime l'éxecutable, le dossier contenant la documentation et les ficiers .tar.gz.
+NB: This removes the executable, the documentation folder, and the .tar.gz files.
 
-- Pour générer une archive
+- To generate an archive
 
 ```
 make archive
 ```
 
-NB : Une archive contenant les fichiers c, h, le Makefile, le README et le Doxyfile sera créée.
+NB: An archive containing the .c, .h files, the Makefile, the README, and the Doxyfile will be created.
 
-# Questions / Feedbacks
+# Questions / Feedback
 
-N'hésitez pas à nous contacter si vous avez des questions ou des commentaires sur notre projet.
+Feel free to contact us if you have any questions or comments about our project.
 
-Merci de nous avoir donné l'opportunité de travailler sur ce projet Sokoban !
+Thank you for giving us the opportunity to work on this Sokoban project!
